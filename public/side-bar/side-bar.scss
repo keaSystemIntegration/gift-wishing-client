@@ -1,0 +1,51 @@
+#side-bar {
+    // background-color: rgb(31, 104, 104);
+    // background-color: #ffd35b;
+    background: linear-gradient(to right top, #fcb243, #ffcb5b);
+    color: #242424;
+    width: 15rem;
+    padding: 1.5rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    hr {
+        border-color: #1d1d1d;
+    }
+
+    .top-section {
+
+        .profile-picture {
+            width: 60%;
+        }
+    }
+
+    .bottom-section {
+
+        .promo {
+            font-family: "Poppins", sans-serif;
+            width: 85%;
+            height: 120px;
+            background: linear-gradient(to right top, #2c2b2b, #161616);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            margin: 50px auto;
+            border-radius: 1.5rem;
+            color: #cfcece;
+            display: flex;
+            align-items: center;
+            padding: .5rem;
+
+            .text {
+                width: 50%;
+            }
+
+            .security-picture {
+                height: 100%;
+            }
+        }
+
+        
+    }
+}

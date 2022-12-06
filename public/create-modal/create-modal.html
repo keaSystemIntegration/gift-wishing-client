@@ -1,0 +1,90 @@
+<div class="modal-backdrop">
+    <div class="modal-content">
+        <div class="modal-header">
+            Create New Account
+        </div>
+
+        <form id="create-form" onsubmit="submitCreateHandler()">
+            <ul>
+                <li class="input">
+                    <input 
+                        type="text" 
+                        placeholder="" 
+                        name="name" 
+                        id="name-of-account"
+                        pattern="[A-Za-z0-9-_./]{2,}"
+                        title="Must contain at least 2 characters. No special character allowed"
+                        required
+                        class="input-field"
+                    />
+                    <label>Name of account</label>
+                    <span class="focus-border"></span>
+                </li>
+
+                <li class="input">
+                    <input type="text" 
+                        placeholder="" 
+                        name="username" 
+                        id="username"
+                        pattern="[A-Za-z0-9-_@. ]{2,}"
+                        title="Allowed characters: [A-Z a-z 0-9 @_.- ]; Minimum 2 characters"
+                        required 
+                        class="input-field"
+                    /> 
+                    <label>Username</label>
+                    <span class="focus-border"></span>
+                </li>
+
+                <li class="input">
+                    <input 
+                        type="password" 
+                        placeholder="" 
+                        name="password"
+                        minlength="4"
+                        id="password"
+                        required 
+                        class="input-field"
+                    />
+                    <label>Password</label>
+                    <span class="focus-border"></span>
+                </li>
+
+                <li class="input">
+                    <input 
+                        type="url" 
+                        placeholder="" 
+                        name="logo-url"
+                        minlength="4"
+                        id="logo-url"
+                        class="input-field"
+                    />
+                    <label>Logo URL</label>
+                    <span class="focus-border"></span>
+                </li>
+
+                <li class="input">
+                    <textarea 
+                        type="text" 
+                        placeholder="" 
+                        name="details" 
+                        id="details"
+                        class="input-field"
+                    >    
+                    </textarea>
+                    <label>Details</label>
+                    <span class="focus-border"></span>
+                </li>
+                
+            </ul>
+
+        </form>
+
+        <div class="button-box">
+            <button class="form-button cancel" onClick="hideCreateModal()">Cancel</button>
+
+            <button class="form-button" type="submit" form="create-form">Save</button>
+        </div>
+    </div>
+</div>
+
+<script src="../create-modal/create-modal.js"></script>

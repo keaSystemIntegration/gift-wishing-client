@@ -1,0 +1,31 @@
+#notification-box {
+    opacity: 0;
+    z-index: -3;
+    visibility: hidden;
+    background-color: green;
+    position: fixed;
+    top: 4vh;
+    left: 50vw;
+    overflow: auto;
+    padding: 10px;
+    transform: translateX(-50%);
+    background: #313131;
+    border-radius: 20px;
+    border: 3px solid green;
+}
+
+@keyframes slide-down-notification {
+    from {
+        top: 0vh;
+    }
+    to {
+        top: 4vh;
+    }
+ }
+
+ @keyframes slide-up-notification {
+    to {
+      top:0vh;
+    }
+ }
+ 

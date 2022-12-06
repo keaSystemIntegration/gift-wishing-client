@@ -1,0 +1,265 @@
+#main-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main-page #headings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 50px;
+  padding: 0 30px;
+}
+
+#main-page #headings :nth-child(1) {
+  min-width: 5rem;
+  width: 200px;
+}
+
+#main-page #headings :nth-child(2) {
+  min-width: 5rem;
+  width: 230px;
+}
+
+#main-page #headings :nth-child(3) {
+  min-width: 5rem;
+  width: 300px;
+}
+
+#main-page #headings :nth-child(4) {
+  min-width: 5rem;
+  width: 230px;
+}
+
+#main-page #headings :nth-child(5) {
+  min-width: 5rem;
+  width: 180px;
+}
+
+#main-page #headings span {
+  padding-left: 15px;
+}
+
+#main-page .title-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-page .title-box .create-button {
+  width: 170px;
+  height: 50px;
+  background: -webkit-gradient(linear, left top, right top, from(#fcb243), to(#ffcb5b));
+  background: linear-gradient(to right, #fcb243, #ffcb5b);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  -webkit-box-shadow: 0 0 5px #fcb243;
+          box-shadow: 0 0 5px #fcb243;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 20px;
+}
+
+#main-page .title-box .create-button:hover {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 12px #fcb243;
+          box-shadow: 0 0 12px #fcb243;
+}
+
+#main-page #account-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-page #account-list .account-box {
+  margin: 25px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  -webkit-box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.589);
+          box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.589);
+  border-radius: 1rem;
+  padding: .5rem 1.5rem;
+  overflow: hidden;
+}
+
+#main-page #account-list .account-box .account-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+}
+
+#main-page #account-list .account-box .account-title .account-icon {
+  margin-right: 10px;
+  max-width: 50px;
+  max-height: 70px;
+  padding: .5rem;
+}
+
+#main-page #account-list .account-box .account-username, #main-page #account-list .account-box .account-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#main-page #account-list .account-box .account-username i, #main-page #account-list .account-box .account-password i {
+  min-width: 35px;
+}
+
+#main-page #account-list .account-box .last-updated {
+  width: 300px;
+  text-align: center;
+}
+
+#main-page #account-list .account-box input {
+  background: #2b2b2b;
+  color: #8d8d8d;
+  padding: 4px  10px;
+  border: none;
+  height: 50px;
+  font-size: 16px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+  width: 165px;
+  outline: none;
+  opacity: .7;
+}
+
+#main-page #account-list .account-box input::-moz-selection {
+  background: #2b2b2b;
+  /* WebKit/Blink Browsers */
+}
+
+#main-page #account-list .account-box input::selection {
+  background: #2b2b2b;
+  /* WebKit/Blink Browsers */
+}
+
+#main-page #account-list .account-box input::-moz-selection {
+  background: #2b2b2b;
+  /* Gecko Browsers */
+}
+
+#main-page #account-list .account-box .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 180px;
+}
+
+#main-page #account-list .account-box .button-group button {
+  background: -webkit-gradient(linear, left top, right top, from(#fcb243), to(#ffcb5b));
+  background: linear-gradient(to right, #fcb243, #ffcb5b);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  width: 75px;
+  max-width: 220px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  -webkit-box-shadow: 0 0 5px #fcb243;
+          box-shadow: 0 0 5px #fcb243;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 20px;
+  bottom: 0;
+  margin: 35px auto;
+}
+
+#main-page #account-list .account-box .button-group button:hover {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 12px #fcb243;
+          box-shadow: 0 0 12px #fcb243;
+}
+
+.tooltip {
+  text-transform: uppercase;
+  z-index: -3;
+  opacity: 0;
+  color: #2bb41e;
+}
+
+.account-password input {
+  margin: 0;
+}
+
+.account-password .copy, .watch, .account-username .copy {
+  margin: 0;
+  padding: 7px 5px 0 5px;
+  border: none;
+  background: #2b2b2b;
+  opacity: .7;
+  -webkit-transition: opacity .1s;
+  transition: opacity .1s;
+}
+
+.account-password .copy:hover, .watch:hover, .account-username .copy:hover {
+  opacity: 1;
+  -webkit-transition: opacity .1s;
+  transition: opacity .1s;
+}
+
+.account-username {
+  margin-right: 40px;
+}
+
+.account-password .watch {
+  padding: 0 15px;
+}
+
+i {
+  color: white;
+}
+
+.modal-content .modal-header {
+  font-weight: 900;
+  font-size: 25px;
+  color: #202020;
+}
+/*# sourceMappingURL=main-page.css.map */

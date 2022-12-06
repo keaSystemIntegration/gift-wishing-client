@@ -1,0 +1,42 @@
+<button id="live-chat-btn" onclick="openChat()"><img src="../assets/icon-chat.png" alt="live-chat" class="icon-chat bounce"/></button>
+
+<div id="live-chat-box">
+    <div class="chat-header">
+        <div class="logo">
+            <i class="far fa-comments"></i>
+            <h3>Any question, <span id="name"></span>?</h3>
+        </div>
+        
+        <p id='close-btn' onclick="closeChat()">X</p>
+    </div>
+    <div class="chat-section">
+        <div class="main-wrapper">
+            <div class="chat-content">
+                <div class="message">
+                    <div class="message-row other-message">
+                        
+                    </div>
+
+                    <div class="message-row your-message">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <form class="msg-text">
+                <input 
+                    type="text" 
+                    name="msg" 
+                    id="msg"
+                    placeholder="Type here..." 
+                    autocomplete="off">
+                <button id="btn-send">
+                    <i class="fas fa-paper-plane">Send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../live-chat/live-chat.js"></script> 

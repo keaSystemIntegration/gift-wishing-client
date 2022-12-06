@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #1d1d1d;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    // overflow: hidden;
+}
+
+:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app-box {
+    display: flex;
+    width: 95vw;
+    height: 90vh;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    margin: auto;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    .content {
+        padding: 1.5rem;
+        overflow-y: scroll;
+        width: 84%;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;  //we will need a different scroll bar maybe
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+
+    &:active {
+        opacity: .8!important;
+    }
+}
+
+
+// Modal common rules
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    padding-top: 100px;
+}
+
+.modal-content, .modal-content-delete {
+    height: 600px;
+    width: 460px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    background-color: #1d1d1d;
+    margin: auto;
+    overflow: auto;
+
+    .modal-header {
+        background: linear-gradient(to right, #fcb243, #ffcb5b);
+        padding: 20px;
+        font-weight: 900;
+        font-size: 25px;
+    }
+
+    .button-box {
+        width: calc(100% -40px);
+        padding: 15px;
+        padding-top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+// Form common rules
+form {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    label {
+        cursor: default;
+    }
+
+    textarea {
+        max-width: 100%;
+    }
+    
+    .input {
+        margin-bottom: 20px;
+        margin: 30px 0 0 0; 
+        position: relative;
+    }
+    
+    .input-field {
+        background: #2b2b2b;
+        color: #8d8d8d;
+        padding: 4px 10px;
+        border: 0;
+        height: 50px;
+        font-size: 16px;
+        overflow: hidden;
+        border-bottom: #2b2b2b solid 1px; 
+        width: 100%; 
+        box-sizing: border-box; 
+        letter-spacing: 1px;
+    }
+    
+    .input-field ~ .focus-border {
+        position: absolute; 
+        bottom: 0; 
+        left: 0; 
+        width: 0; 
+        height: 2px; 
+        background-color: #fcb243; 
+        transition: 0.4s;
+    }
+    
+    .input-field:focus ~ .focus-border, .has-content.input-field ~ .focus-border {
+        width: 100%; 
+        transition: 0.4s;
+    }
+    
+    .input-field ~ label {
+        position: absolute; 
+        left: 0; 
+        top: 15px; 
+        color: #aaa; 
+        transition: 0.3s; 
+        letter-spacing: 0.5px;
+        cursor: default;
+        margin-left: 10px;
+    }
+    
+    .input-field:focus ~ label, .has-content.input-field ~ label {
+        top: -16px; 
+        font-size: 12px; 
+        color: #fcb243; 
+        transition: 0.3s;
+    }
+}
+
+.form-button {
+    background: linear-gradient(to right, #fcb243, #ffcb5b);
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    position: relative;
+    min-width: 135px;
+    max-width: 220px;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 0 0 5px #fcb243;
+    transition: all 0.2s ease;
+    border-radius: 30px;
+    margin: 0 auto;
+
+    &.cancel {
+        background: #777777;
+        box-shadow: 0 0 5px #777777;
+        color: rgba(255, 255, 255, 0.788);
+
+        &:hover {
+            box-shadow: 0 0 12px #777777;
+        }
+    }
+
+    &:hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 0 12px #fcb243;
+    }
+}
