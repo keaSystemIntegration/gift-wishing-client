@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
-    "dev": "cross-env PORT=8000 nodemon app.js"
+    "server-dev": "cross-env PORT=8001 nodemon src/app.js",
+    "sass-dev": "sass --watch ./public --update --style=expanded public/styles:public/styles",
+    "dev": "concurrently \"npm run server-dev\" \"npm run sass-dev\""
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,10 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
-    "path": "^0.12.7",
-    "sass": "^1.34.0"
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "sass": "^1.56.2"
   }
 }

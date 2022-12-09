@@ -1,5 +1,7 @@
+@import '../wishlist/styles';
+
 body {
-    margin: 0;
+    margin: 1;
     font-family: 'Roboto', sans-serif;
     background: #1d1d1d;
     color: #fff;
@@ -80,7 +82,7 @@ button {
     }
 
     .button-box {
-        width: calc(100% -40px);
+        width: calc(100% - 40px);
         padding: 15px;
         padding-top: 0;
         display: flex;
