@@ -1,22 +1,29 @@
 .modal-content-delete {
   height: 250px;
 }
+
 .modal-content-delete .modal-header {
-  color: rgb(221, 221, 221);
+  color: #dddddd;
+  background: -webkit-gradient(linear, left top, right top, from(#ec1919), to(#c72b2b));
   background: linear-gradient(to right, #ec1919, #c72b2b);
 }
+
 .modal-content-delete p {
   text-align: center;
   padding: 20px;
   padding-bottom: 0;
 }
+
 .modal-content-delete .form-button.delete {
+  background: -webkit-gradient(linear, left top, right top, from(#ec1919), to(#c72b2b));
   background: linear-gradient(to right, #ec1919, #c72b2b);
-  box-shadow: 0 0 5px #ec1919;
-  color: rgb(221, 221, 221);
-}
-.modal-content-delete .form-button.delete:hover {
-  box-shadow: 0 0 15px #fc0c0c;
+  -webkit-box-shadow: 0 0 5px #ec1919;
+          box-shadow: 0 0 5px #ec1919;
+  color: #dddddd;
 }
 
+.modal-content-delete .form-button.delete:hover {
+  -webkit-box-shadow: 0 0 15px #fc0c0c;
+          box-shadow: 0 0 15px #fc0c0c;
+}
 /*# sourceMappingURL=delete-modal.css.map */

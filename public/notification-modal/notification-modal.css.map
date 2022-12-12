@@ -1,1 +1,9 @@
-{"version":3,"sourceRoot":"","sources":["notification-modal.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;IACI;;EAEJ;IACI;;;AAIP;EACG;IACE","file":"notification-modal.css"}
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,OAAO,EAAE,CAAC;EACV,OAAO,EAAE,EAAE;EACX,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,KAAK;EACvB,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,IAAI;EACV,QAAQ,EAAE,IAAI;EACd,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,gBAAgB;EAC3B,UAAU,EAAE,OAAO;EACnB,aAAa,EAAE,IAAI;EACnB,MAAM,EAAE,eAAe;CAC1B;;AAED,UAAU,CAAV,uBAAU;EACN,IAAI;IACA,GAAG,EAAE,GAAG;;EAEZ,EAAE;IACE,GAAG,EAAE,GAAG;;;;AAIf,UAAU,CAAV,qBAAU;EACP,EAAE;IACA,GAAG,EAAC,GAAG",
+    "sources": [
+        "notification-modal.scss"
+    ],
+    "names": [],
+    "file": "notification-modal.css"
+}

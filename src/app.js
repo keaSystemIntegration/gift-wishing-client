@@ -56,6 +56,11 @@ const wishlist = fs.readFileSync(
   "utf-8"
 );
 
+const friends = fs.readFileSync(
+  path.join(__dirname, "../public/friends/index.html"),
+  "utf-8"
+);
+
 // UI Calls
 app.get("/", (req, res) => {
   res.send(
@@ -76,7 +81,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/wishlists", (req, res) => {
-  res.send(header + wishlist + footer);
+  res.send(header + wishlist + friends + footer);
 });
 
 server.listen(process.env.PORT, (error) => {

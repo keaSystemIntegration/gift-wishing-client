@@ -1,9 +1,11 @@
 @import '../wishlist/styles';
+@import '../friends/styles';
 
 body {
+    position: relative;
     margin: 1;
     font-family: 'Roboto', sans-serif;
-    background: #1d1d1d;
+    background: #5a5a5a;
     color: #fff;
     display: flex;
     height: 100vh;
