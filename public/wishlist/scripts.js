@@ -1,13 +1,10 @@
 // fetch user wishlist and display it on page
-(async function () {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc4NzMwYTM0ZTNmNDAxZTk0MDM5ZjQiLCJlbWFpbCI6ImpvaG5fZG9lM0BnbWFpbC5jb20iLCJpYXQiOjE2NzEyODY2MTR9.NVjgB9o4OqmGBv8zJBdvDg_UrM2ET0eYkCtOBqf1fpI";
-  const resp = axios.get("http://localhost/wishlist", {
+(async function() {
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzliNzE1NzE3OTZiZGM3MzczYjAwOGYiLCJlbWFpbCI6ImNyaXNAZ21haWwuY29tIiwiaWF0IjoxNjcxMTM5MTcyfQ.bfbWR5YoBa7Oofb1mhBoApkMHZYlUz-wqVI-DeeXdYc';
+  const resp = axios.get('http://20.101.213.14/user/user', {
     headers: {
-      Authorization: `Bearer ` + token,
-      "Content-Type": "application/json",
-      Accept: "*",
-    },
+      "Authorization": `Bearer ${token}`,
+    }
   });
   const res = await resp;
   console.log("server res", res.data);
