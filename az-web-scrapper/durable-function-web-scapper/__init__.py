@@ -15,7 +15,8 @@ import azure.durable_functions as df
 
 def orchestrator_function(context: df.DurableOrchestrationContext):
     print("orchestrator_function has been called")
-    # result1 = yield context.call_activity('Hello', "Tokyo")
+    result = yield context.call_activity('get-categories-url', "Tokyo")
+    print("result: ", result)
     # result2 = yield context.call_activity('Hello', "Seattle")
     # result3 = yield context.call_activity('Hello', "London")
     # return [result1, result2, result3]
