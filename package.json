@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
-    "dev": "cross-env PORT=8000 nodemon app.js"
+    "dev": "cross-env PORT=8000 nodemon src/app.js"
   },
   "repository": {
     "type": "git",

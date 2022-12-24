@@ -3,6 +3,8 @@ const express = require("express");
 const http = require("http");
 const app = express();
 
+const PORT = process.env.PORT || 8000
+
 let server = http.createServer(app);
 const fs = require("fs");
 
@@ -51,6 +53,17 @@ const liveChat = fs.readFileSync(
   "utf-8"
 );
 
+const products = fs.readFileSync(
+    path.join(__dirname, "../public/products/products.html"), "utf-8"
+);
+app.get("/products", (req, res) => {
+  res.send(header + sideBar +
+      notification +
+      products +
+      liveChat +
+      footer)
+});
+
 // UI Calls
 app.get("/", (req, res) => {
   res.send(
@@ -70,9 +83,9 @@ app.get("/login", (req, res) => {
   res.send(header + login + footer);
 });
 
-server.listen(process.env.PORT, (error) => {
+server.listen(PORT, (error) => {
   if (error) {
     console.log(error);
   }
-  console.log("App listening on localhost :", process.env.PORT);
+  console.log("App listening on localhost :", PORT);
 });
