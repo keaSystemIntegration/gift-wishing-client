@@ -1,11 +1,8 @@
 {
     "azureFunctions.deploySubpath": ".",
-    "azureFunctions.scmDoBuildDuringDeployment": true,
-    "azureFunctions.pythonVenv": ".venv",
-    "azureFunctions.projectLanguage": "Python",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "JavaScript",
     "azureFunctions.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
-    "python.analysis.extraPaths": [
-        "./get-categories-url/categories_crawler/categories_crawler/spiders"
-    ]
+    "azureFunctions.preDeployTask": "npm prune (functions)"
 }
