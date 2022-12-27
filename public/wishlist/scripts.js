@@ -1,23 +1,14 @@
 // fetch user wishlist and display it on page
 (async function() {
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzliNzE1NzE3OTZiZGM3MzczYjAwOGYiLCJlbWFpbCI6ImNyaXNAZ21haWwuY29tIiwiaWF0IjoxNjcxMTM5MTcyfQ.bfbWR5YoBa7Oofb1mhBoApkMHZYlUz-wqVI-DeeXdYc';
-  const resp = axios.get('http://20.101.213.14/user/user', {
-    headers: {
-      "Authorization": `Bearer ${token}`,
-    }
-  });
-  const res = await resp;
-  console.log("server res", res.data);
-
   const response = axios.get("https://api.gifts.hotdeals.dev/wishes", {
     headers: {
       authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA4ODYxOTkuMTUwNTE1LCJleHAiOjE2NzE0OTEwMDAuMTUwNTE1LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.EuACwT2y0MEibJAhLnaLU8r4EtLyRgogOnyBjCI1h9o",
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzIxNDg5NzIuNjQ1NjI2LCJleHAiOjE2NzI3NTM3NzMuNjQ1NjI2LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.yDILXEaNUxIudW2CzeWyg3xGjo4YKJB_ivb2vNkyE1s",
     },
   });
   const result = await response;
   const wishlistProducts = result?.data || [];
-  // console.log(wishlistProducts);
+  console.log(wishlistProducts);
   if (wishlistProducts.length > 0) {
     $("#wishlist__products").html(function () {
       return wishlistProducts.map(

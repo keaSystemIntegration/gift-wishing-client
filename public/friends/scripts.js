@@ -1,33 +1,22 @@
-// console.log('hell');
 import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 
 let socket = null;
-let socket2 = null;
 
 (async function() {
     socket = io("https://api.gifts.hotdeals.dev", {
     transports: ["polling"],
     auth: {
       token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA4ODYxOTkuMTUwNTE1LCJleHAiOjE2NzE0OTEwMDAuMTUwNTE1LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.EuACwT2y0MEibJAhLnaLU8r4EtLyRgogOnyBjCI1h9o",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzIxNDg5NzIuNjQ1NjI2LCJleHAiOjE2NzI3NTM3NzMuNjQ1NjI2LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.yDILXEaNUxIudW2CzeWyg3xGjo4YKJB_ivb2vNkyE1s",
     },
   });
-  // console.log("Socket: ", socket);
-
-  // socket2 = io("http://localhost", {
-  //   extraHeaders: {
-  //     Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzliNzE1NzE3OTZiZGM3MzczYjAwOGYiLCJlbWFpbCI6ImNyaXNAZ21haWwuY29tIiwiaWF0IjoxNjcxMTM5MTcyfQ.bfbWR5YoBa7Oofb1mhBoApkMHZYlUz-wqVI-DeeXdYc"      
-  //   }
-  // });
-
-  // console.log('socket 2', socket2);
 })();
 
 socket.emit("status");
 
 socket.on("statusUpdate", (data) => {
   const friends = data || [];
-  // console.log(friends);
+  console.log(friends);
   if (friends.length > 0) {
     $('#friends__list').html(function() {
       return friends.map((friend, index) => {

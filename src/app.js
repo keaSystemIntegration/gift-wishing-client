@@ -81,7 +81,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/wishlists", (req, res) => {
-  res.send(header + wishlist + friends + footer);
+  res.send(header + sideBar  + wishlist + friends + footer);
 });
 
 server.listen(process.env.PORT, (error) => {
