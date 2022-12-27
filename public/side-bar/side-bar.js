@@ -18,5 +18,10 @@
   );
 })();
 
+function logout() {
+  window.localStorage.removeItem("token");
+  window.location.reload();
+}
+
 // const response = await axios.get('/getUser');
 // $("#greeting").append(response.data || 'Guest');
