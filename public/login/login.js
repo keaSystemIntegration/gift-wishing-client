@@ -60,6 +60,16 @@ $(document).ready(function () {
       .then((res) => {
         console.log(res.data.token);
         window.localStorage.setItem("token", res.data.token);
+        const claims = JSON.parse(
+          atob(res.data.token.split(".")[1], "base64").toString()
+        );
+        window.localStorage.setItem(
+          "user",
+          JSON.stringify({
+            email: claims.sub,
+            user_id: claims.user_id,
+          })
+        );
         window.location.assign("/");
       })
       .catch((err) => {

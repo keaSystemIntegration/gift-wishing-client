@@ -20,6 +20,7 @@
 
 function logout() {
   window.localStorage.removeItem("token");
+  window.localStorage.removeItem("user");
   window.location.reload();
 }
 
