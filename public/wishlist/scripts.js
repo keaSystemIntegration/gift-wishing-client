@@ -1,14 +1,15 @@
 // fetch user wishlist and display it on page
 (async function() {
-  const response = axios.get("https://api.gifts.hotdeals.dev/wishes", {
+  const accessToken = window.localStorage.getItem("token");
+  const response = axios.get("/wishes", {
     headers: {
       authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzIxNDg5NzIuNjQ1NjI2LCJleHAiOjE2NzI3NTM3NzMuNjQ1NjI2LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.yDILXEaNUxIudW2CzeWyg3xGjo4YKJB_ivb2vNkyE1s",
+        `Bearer ${accessToken}`,
     },
   });
   const result = await response;
   const wishlistProducts = result?.data || [];
-  console.log(wishlistProducts);
+  // console.log(wishlistProducts);
   if (wishlistProducts.length > 0) {
     $("#wishlist__products").html(function () {
       return wishlistProducts.map(
