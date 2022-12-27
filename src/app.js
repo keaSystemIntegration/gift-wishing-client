@@ -61,6 +61,11 @@ const friends = fs.readFileSync(
   "utf-8"
 );
 
+const wishlistModal = fs.readFileSync(
+  path.join(__dirname, "../public/wishlist-modal/index.html"),
+  "utf-8"
+);
+
 // UI Calls
 app.get("/", (req, res) => {
   res.send(
@@ -81,7 +86,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/wishlists", (req, res) => {
-  res.send(header + sideBar  + wishlist + friends + footer);
+  res.send(header + sideBar + friends + wishlist + wishlistModal + footer);
 });
 
 server.listen(process.env.PORT, (error) => {
