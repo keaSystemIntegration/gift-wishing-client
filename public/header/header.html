@@ -33,14 +33,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
-      src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"
-      defer
-    ></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"
-      defer
-    ></script>
-    <script
       src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"
       defer
     ></script>
@@ -49,5 +41,9 @@
     <!-- position is important -->
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <script>
+      axios.defaults.baseURL = "https://api.gifts.hotdeals.dev/";
+    </script>
+  </body>
 </html>

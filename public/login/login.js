@@ -40,21 +40,6 @@ function login() {
 }
 
 $(document).ready(function () {
-  const firebaseConfig = {
-    apiKey: "AIzaSyD7-tfxQ9oJ1NDjdQ1VbQINGQp9BKq_AuY",
-    authDomain: "your-passwords-9900c.firebaseapp.com",
-    databaseURL:
-      "https://your-passwords-9900c-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "your-passwords-9900c",
-    storageBucket: "your-passwords-9900c.appspot.com",
-    messagingSenderId: "629253822029",
-    appId: "1:629253822029:web:e30825465d68baeec5ae04",
-  };
-
-  firebase.initializeApp(firebaseConfig);
-
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
-
   $("#login-form").on("submit", function (e) {
     e.preventDefault();
 
@@ -63,7 +48,7 @@ $(document).ready(function () {
 
     axios
       .post(
-        "https://api.gifts.hotdeals.dev/auth/login",
+        "auth/login",
         { email, password },
         {
           headers: {
@@ -74,6 +59,7 @@ $(document).ready(function () {
       )
       .then((res) => {
         console.log(res.data.token);
+        window.localStorage.setItem("token", res.data.token);
         window.location.assign("/");
       })
       .catch((err) => {
@@ -90,7 +76,7 @@ $(document).ready(function () {
 
     axios
       .post(
-        "https://api.gifts.hotdeals.dev/auth/signup",
+        "/auth/signup",
         { email, password, name },
         {
           headers: {

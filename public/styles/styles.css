@@ -38,7 +38,7 @@ body {
   position: relative;
   margin: 1;
   font-family: "Roboto", sans-serif;
-  background: #5a5a5a;
+  background: #1d1d1d;
   color: #fff;
   display: flex;
   height: 100vh;
@@ -95,7 +95,8 @@ button:active {
   padding-top: 100px;
 }
 
-.modal-content, .modal-content-delete {
+.modal-content,
+.modal-content-delete {
   height: 600px;
   width: 460px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
@@ -104,13 +105,15 @@ button:active {
   margin: auto;
   overflow: auto;
 }
-.modal-content .modal-header, .modal-content-delete .modal-header {
+.modal-content .modal-header,
+.modal-content-delete .modal-header {
   background: linear-gradient(to right, #fcb243, #ffcb5b);
   padding: 20px;
   font-weight: 900;
   font-size: 25px;
 }
-.modal-content .button-box, .modal-content-delete .button-box {
+.modal-content .button-box,
+.modal-content-delete .button-box {
   width: calc(100% - 40px);
   padding: 15px;
   padding-top: 0;
@@ -156,7 +159,8 @@ form .input-field ~ .focus-border {
   background-color: #fcb243;
   transition: 0.4s;
 }
-form .input-field:focus ~ .focus-border, form .has-content.input-field ~ .focus-border {
+form .input-field:focus ~ .focus-border,
+form .has-content.input-field ~ .focus-border {
   width: 100%;
   transition: 0.4s;
 }
@@ -170,7 +174,8 @@ form .input-field ~ label {
   cursor: default;
   margin-left: 10px;
 }
-form .input-field:focus ~ label, form .has-content.input-field ~ label {
+form .input-field:focus ~ label,
+form .has-content.input-field ~ label {
   top: -16px;
   font-size: 12px;
   color: #fcb243;
