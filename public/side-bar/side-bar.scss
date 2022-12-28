@@ -21,6 +21,31 @@
     }
   }
 
+  .middle-section {
+    #navigation-bar {
+      display: flex;
+      flex-direction: column;
+
+      .option {
+        height: 5vh;
+        background: linear-gradient(to right top, #2c2b2b, #161616);
+        color: white;
+        box-shadow: 0 0 5px #2c2b2b;
+        // background-color: #161616;
+
+        &:active {
+          color: #fcb243;
+          font-weight: bold;
+        }
+
+        &.active {
+          color: #fcb243;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
   .bottom-section {
     display: flex;
     flex-direction: column;

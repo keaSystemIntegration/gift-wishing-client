@@ -13,11 +13,6 @@
   padding: 0.625em 1.1em;
 }
 
-#friends {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 #friends .friend__item .friend__item_status {
   width: 15px;
   height: 15px;
