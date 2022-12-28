@@ -36,7 +36,6 @@ $("button.option").click(function () {
   $("#navigation-bar")
     .find("button.option")
     .each(function () {
-      $(this).addClass("active");
       if ($(this).attr("data-id") == link) {
         $(this).addClass("active");
       } else {
