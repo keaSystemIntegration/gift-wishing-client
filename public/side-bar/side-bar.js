@@ -2,6 +2,10 @@
   axios.interceptors.request.use(
     (config) => {
       const token = window.localStorage.getItem("token");
+      const user = window.localStorage.getItem("user");
+      if (user) {
+        $("#greeting").text(JSON.parse(user).email || "Guest");
+      }
 
       if (token) {
         console.log("INTERCEPTOR TOKEN", token);
@@ -24,5 +28,18 @@ function logout() {
   window.location.reload();
 }
 
-// const response = await axios.get('/getUser');
-// $("#greeting").append(response.data || 'Guest');
+$("button.option").click(function () {
+  var link = $(this).attr("data-id");
+
+  $(".content").load(`/${link}`);
+
+  $("#navigation-bar")
+    .find("button.option")
+    .each(function () {
+      if ($(this).attr("data-id") == link) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+});

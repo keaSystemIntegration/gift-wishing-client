@@ -2,17 +2,22 @@
 
 <div id="side-bar">
     <div class="top-section">
-        <h1 id="greeting">Welcome, </h1>
+        <h1>Welcome, </h1>
 
-        <img class="profile-picture" src="https://image.flaticon.com/icons/png/512/1946/1946392.png" alt="profile">
+        <span id="greeting"></span>
+
+        <!-- <img class="profile-picture" src="https://image.flaticon.com/icons/png/512/1946/1946392.png" alt="profile"> -->
         <!-- would be dynamic -->
     </div>
 
     <div class="middle-section">
-        <h1>stuff</h1>
+        <div id="navigation-bar">
+            <button class="option active" data-id="wishlist">Wishlist</button>
+            <button class="option" data-id="friends">Friends</button>
+            <button class="option" data-id="products">Products</button> <!-- example -->
+        </div>
     </div>
     
-
     <div class="bottom-section">
         <button class="logout-button" onclick="logout()">Logout</button>
 

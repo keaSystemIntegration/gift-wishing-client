@@ -71,12 +71,13 @@ app.get("/", (req, res) => {
   res.send(
     header +
       sideBar +
-      mainPage +
-      create +
-      deleteAccount +
-      edit +
-      notification +
-      liveChat +
+      wishlist +
+      // mainPage +
+      // create +
+      // deleteAccount +
+      // edit +
+      // notification +
+      // liveChat +
       footer
   );
 });
