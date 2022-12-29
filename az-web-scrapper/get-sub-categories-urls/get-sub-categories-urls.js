@@ -1,5 +1,5 @@
-import axios from "axios";
-import {load} from "cheerio";
+const axios = require('axios');
+const load = require('cheerio').load;
 
 const categoriesCatalogUrl = "https://www.pricerunner.com/public/navigation/menu/uk/items"
 const baseUrl = "https://www.pricerunner.com"
@@ -10,7 +10,7 @@ const getHtmlBody = async (url) => {
 }
 
 
-export async function  getSubCategoriesUrls (url)  {
+async function  getSubCategoriesUrls (url)  {
     const $ = await getHtmlBody(url)
     const result = [];
     $("a.pr-1edcde9").each((i, el) => {
@@ -19,14 +19,7 @@ export async function  getSubCategoriesUrls (url)  {
     return result;
 }
 
-// const urls = [
-//    'https://www.pricerunner.com/t/34/Home-Interior',
-//     'https://www.pricerunner.com/t/1424/Garden-Patio',
-//     'https://www.pricerunner.com/t/35/Kids-Family',
-//     'https://www.pricerunner.com/t/1493/Toys-Hobbies'
-// ]
-
-export async function getAllPotentialUrls(urls) {
+ async function getAllPotentialUrls(urls) {
     const result = [];
     for (const url of urls) {
         result.push(await getSubCategoriesUrls(url))
@@ -34,4 +27,5 @@ export async function getAllPotentialUrls(urls) {
     return result.flatMap(url => url)
 }
 
+module.exports = { getSubCategoriesUrls, getAllPotentialUrls }
 // console.log(await test());

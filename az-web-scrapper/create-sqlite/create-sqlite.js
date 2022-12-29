@@ -1,10 +1,10 @@
-import Database from 'better-sqlite3';
+
+
+const sqlite3 = require('sqlite3').verbose();
 
 
 
-const db = new Database('products.db');
-
-export function createDbIfNotExists() {
+function createDbIfNotExists(db) {
     db.exec(`CREATE TABLE IF NOT EXISTS Products (
         product_id TEXT PRIMARY KEY NOT NULL,
         product_name TEXT NOT NULL,
@@ -19,8 +19,9 @@ export function createDbIfNotExists() {
     ;`);
 }
 
-export function insertProducts(products) {
-    createDbIfNotExists();
+function insertProducts(products) {
+    const db = new sqlite3.Database('D:/home/products.db');
+    createDbIfNotExists(db);
     const stmt = db.prepare("INSERT  OR IGNORE INTO Products VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     products.forEach((product) => {
         stmt.run(
@@ -37,3 +38,5 @@ export function insertProducts(products) {
     });
     stmt.finalize();
 }
+
+module.exports = { insertProducts }

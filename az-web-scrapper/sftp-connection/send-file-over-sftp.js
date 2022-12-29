@@ -1,12 +1,13 @@
-import SftpClient from 'ssh2-sftp-client'
-import { sftpConnection } from './sftp-connection.js'
+const SftpClient = require('ssh2-sftp-client');
+const sftpConnection = require('./sftp-connection.js')
 
-
-export function uploadFile (){
+function uploadFile (){
     const sftp = new SftpClient()
     sftp.connect(sftpConnection).then(() => {
-            sftp.put("products.db", "upload/products.db")
+            sftp.put("D:/home/products.db", "upload/products.db")
         }
     )
 }
+module.exports = {uploadFile};
+
 

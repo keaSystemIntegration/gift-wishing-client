@@ -1,9 +1,9 @@
-import axios from "axios"
-import { load } from "cheerio";
+const axios = require('axios');
+const load = require('cheerio').load;
 
 const baseUrl = "https://www.pricerunner.com"
 
-export const getProductsHtml = async (url) => {
+const getProductsHtml = async (url) => {
     const {data} = await axios.get(url);
     return data
 }
@@ -32,8 +32,7 @@ const getProducts = async (url) => {
 }
 
 
-
-export async function getAllproducts(urls) {
+async function getAllproducts(urls) {
     const result = [];
     for (const url of urls) {
         if (url.includes("attr_"))
@@ -41,3 +40,5 @@ export async function getAllproducts(urls) {
     }
     return result.flatMap(url => url)
 }
+
+module.exports = { getProducts, getAllproducts }

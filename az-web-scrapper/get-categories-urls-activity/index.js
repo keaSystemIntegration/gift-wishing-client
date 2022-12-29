@@ -1,6 +1,8 @@
-﻿import { getCategoriesUrls } from '../get-all-categories-url/get-all-categories-url.js';
+﻿const getCategoriesUrls = require('../get-all-categories-url/get-all-categories-url.js').getCategoriesUrls;
 
-export default async function (context) {
+module.exports = async function (context) {
     const categoriesUrls = await getCategoriesUrls();
+    context.log("categories urls contains: ", categoriesUrls.length);
+
     return categoriesUrls;
 };

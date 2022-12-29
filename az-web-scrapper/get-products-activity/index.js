@@ -1,6 +1,8 @@
-﻿import { getAllproducts } from '../get-product/get-products.js';
+﻿
+const getAllproducts = require('../get-product/get-products.js').getAllproducts;
 
-export default async function (context) {
-    const result = getAllproducts(context.bindings.name)
-    return result;
-};
+module.exports = async function (context) {
+    const productsResult = await getAllproducts(context.bindings.name)
+    context.log("products results contains: ", productsResult.length);
+    return productsResult;
+}

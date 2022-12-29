@@ -1,6 +1,6 @@
-﻿import { orchestrator } from "durable-functions";
+﻿const orchestrator = require("durable-functions").orchestrator;
 
-export default orchestrator( function* (context) {
+module.exports = orchestrator( function* (context) {
     const outputs = [];
     const urlsForCategories = yield context.df.callActivity("get-categories-urls-activity", "Tokyo");
     const urlsForSubCategories = yield context.df.callActivity("get-sub-categories-url-activity", urlsForCategories);

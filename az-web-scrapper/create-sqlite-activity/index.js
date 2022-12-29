@@ -1,6 +1,6 @@
-﻿import {insertProducts} from '../create-sqlite/create-sqlite.js';
+﻿const insertProducts = require('../create-sqlite/create-sqlite.js').insertProducts;
 
-export default async function (context) {
+module.exports = async function (context) {
     insertProducts(context.bindings.name);
     return true
 };

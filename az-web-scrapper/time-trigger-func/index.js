@@ -1,6 +1,6 @@
-import { getClient } from 'durable-functions';
+const getClient = require('durable-functions').getClient;
 
-export default async function (context, myTimer) {
+module.exports = async function (context, myTimer) {
     var timeStamp = new Date().toISOString();
     
     if (myTimer.isPastDue)
