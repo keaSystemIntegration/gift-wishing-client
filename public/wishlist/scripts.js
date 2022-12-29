@@ -1,28 +1,12 @@
 // fetch user wishlist and display it on page
-(async function () {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc4NzMwYTM0ZTNmNDAxZTk0MDM5ZjQiLCJlbWFpbCI6ImpvaG5fZG9lM0BnbWFpbC5jb20iLCJpYXQiOjE2NzEyODY2MTR9.NVjgB9o4OqmGBv8zJBdvDg_UrM2ET0eYkCtOBqf1fpI";
-  const resp = axios.get("http://localhost/wishlist", {
-    headers: {
-      Authorization: `Bearer ` + token,
-      "Content-Type": "application/json",
-      Accept: "*",
-    },
-  });
-  const res = await resp;
-  console.log("server res", res.data);
-
-  const response = axios.get("https://api.gifts.hotdeals.dev/wishes", {
-    headers: {
-      authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA4ODYxOTkuMTUwNTE1LCJleHAiOjE2NzE0OTEwMDAuMTUwNTE1LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.EuACwT2y0MEibJAhLnaLU8r4EtLyRgogOnyBjCI1h9o",
-    },
-  });
-  const result = await response;
-  const wishlistProducts = result?.data || [];
-  // console.log(wishlistProducts);
+const accessToken = window.localStorage.token;
+(async function() {
+  const wishes = JSON.parse(window.localStorage.wishes);
+  // console.log(wishes);
+  const userEmail = JSON.parse(window.localStorage.user)?.email;
+  const wishlistProducts = wishes?.filter(wish => wish.user_email === userEmail) || [];
   if (wishlistProducts.length > 0) {
-    $("#wishlist__products").html(function () {
+    $("#wishlist__products").append(function () {
       return wishlistProducts.map(
         (product, index) => `
       <div class="wishlist__product" id="${product.wish_id}">
@@ -37,8 +21,7 @@
           <button>remove</button>
         </span>
       </div>
-      `
-      );
+      `);
     });
   } else {
     $("#wishlist__products").append(`
@@ -76,10 +59,10 @@ $(document).on("click", "#remove-product", async function () {
   const productId = $(this).data("product-id");
   // console.log(productName, productId);
 
-  const response = axios.delete("https://api.gifts.hotdeals.dev/wishes", {
+  const response = axios.delete("/wishes", {
     headers: {
       authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA3NjE3NjQuMDY2OTkzLCJleHAiOjE2NzEzNjY1NjUuMDY2OTkzLCJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsInVzZXJfaWQiOiIxODJlNTJhOTRhYWY0ZGZmODg3ZTdiOGU1NjA5NDcwZCJ9.MVGhDNGhPSQanuqh6y1EcLEnVnHIqPweSY86PEZTnPk",
+        `Bearer ${accessToken}`,
     },
     data: {
       productName: productName,

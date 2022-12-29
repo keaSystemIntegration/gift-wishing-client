@@ -1,26 +1,27 @@
-// console.log('hell');
 import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 
 let socket = null;
-let socket2 = null;
+const accessToken = window.localStorage.token;
+const url = "https://api.gifts.hotdeals.dev";
 
 (async function() {
-    socket = io("https://api.gifts.hotdeals.dev", {
+    socket = io(url, {
     transports: ["polling"],
     auth: {
-      token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA4ODYxOTkuMTUwNTE1LCJleHAiOjE2NzE0OTEwMDAuMTUwNTE1LCJzdWIiOiJjcmlzQGdtYWlsLmNvbSIsInVzZXJfaWQiOiJlYjFkODhlNWY5MjA0OWFjYjEyOTVmNGYwYzg3MzlhMCJ9.EuACwT2y0MEibJAhLnaLU8r4EtLyRgogOnyBjCI1h9o",
+      token: accessToken
     },
   });
-  // console.log("Socket: ", socket);
 
-  // socket2 = io("http://localhost", {
-  //   extraHeaders: {
-  //     Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzliNzE1NzE3OTZiZGM3MzczYjAwOGYiLCJlbWFpbCI6ImNyaXNAZ21haWwuY29tIiwiaWF0IjoxNjcxMTM5MTcyfQ.bfbWR5YoBa7Oofb1mhBoApkMHZYlUz-wqVI-DeeXdYc"      
-  //   }
-  // });
-
-  // console.log('socket 2', socket2);
+  const response = axios.get("/wishes", {
+    headers: {
+      authorization:
+        `Bearer ${accessToken}`,
+    },
+  });
+  const result = await response;
+  // console.log(result.data);
+  window.localStorage.setItem("wishes", JSON.stringify(result.data));
+  // console.log(window.localStorage);
 })();
 
 socket.emit("status");
@@ -44,7 +45,7 @@ socket.on("statusUpdate", (data) => {
 
         
         return `
-        <div class="friend__item">
+        <div class="friend__item" id="${friend.email}">
           <span class="friend__item_status friend__item_status-${status}" title="${status}"></span>
           <span class="friend__item_index">${++index}.</span>
           <span class="friend__item_email">${friend.email}</span>
