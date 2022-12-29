@@ -1,10 +1,71 @@
+.wishlist {
+  color: white;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #d9534f;
+}
+
+.swal2-actions .swal2-confirm {
+  padding: 0;
+}
+.swal2-actions .swal2-confirm #remove-product {
+  padding: 0.625em 1.1em;
+}
+
+#friends .friend__item .friend__item_status {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 50%;
+}
+#friends .friend__item .friend__item_status-online {
+  background-color: #5cb85c;
+}
+#friends .friend__item .friend__item_status-offline {
+  background-color: #d9534f;
+}
+#friends .friend__item .friend__item_status-not-registered {
+  background-color: #292b2c;
+}
+
+#wishlist-modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#wishlist-modal .modal-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-between;
+  background: linear-gradient(to right top, #fcb243, #ffcb5b);
+  color: #242424;
+}
+#wishlist-modal .modal-container .modal-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#wishlist-modal .modal-container .modal-header .close-modal {
+  cursor: pointer;
+}
+
 body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
+  position: relative;
+  margin: 1;
+  font-family: "Roboto", sans-serif;
   background: #1d1d1d;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 100vh;
 }
@@ -18,18 +79,14 @@ a {
 }
 
 .app-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 95vw;
   height: 90vh;
-  -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   margin: auto;
   border-radius: 2rem;
   overflow: hidden;
 }
-
 .app-box .content {
   padding: 1.5rem;
   overflow-y: scroll;
@@ -46,7 +103,6 @@ button {
   outline: none;
   text-decoration: none;
 }
-
 button:active {
   opacity: 0.8 !important;
 }
@@ -65,35 +121,30 @@ button:active {
   padding-top: 100px;
 }
 
-.modal-content, .modal-content-delete {
+.modal-content,
+.modal-content-delete {
   height: 600px;
   width: 460px;
-  -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   border-radius: 1rem;
   background-color: #1d1d1d;
   margin: auto;
   overflow: auto;
 }
-
-.modal-content .modal-header, .modal-content-delete .modal-header {
-  background: -webkit-gradient(linear, left top, right top, from(#fcb243), to(#ffcb5b));
+.modal-content .modal-header,
+.modal-content-delete .modal-header {
   background: linear-gradient(to right, #fcb243, #ffcb5b);
   padding: 20px;
   font-weight: 900;
   font-size: 25px;
 }
-
-.modal-content .button-box, .modal-content-delete .button-box {
-  width: calc(100% -40px);
+.modal-content .button-box,
+.modal-content-delete .button-box {
+  width: calc(100% - 40px);
   padding: 15px;
   padding-top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 form ul {
@@ -101,21 +152,17 @@ form ul {
   padding: 0;
   margin: 0;
 }
-
 form label {
   cursor: default;
 }
-
 form textarea {
   max-width: 100%;
 }
-
 form .input {
   margin-bottom: 20px;
   margin: 30px 0 0 0;
   position: relative;
 }
-
 form .input-field {
   background: #2b2b2b;
   color: #8d8d8d;
@@ -126,11 +173,9 @@ form .input-field {
   overflow: hidden;
   border-bottom: #2b2b2b solid 1px;
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   letter-spacing: 1px;
 }
-
 form .input-field ~ .focus-border {
   position: absolute;
   bottom: 0;
@@ -138,38 +183,32 @@ form .input-field ~ .focus-border {
   width: 0;
   height: 2px;
   background-color: #fcb243;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
-form .input-field:focus ~ .focus-border, form .has-content.input-field ~ .focus-border {
+form .input-field:focus ~ .focus-border,
+form .has-content.input-field ~ .focus-border {
   width: 100%;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 form .input-field ~ label {
   position: absolute;
   left: 0;
   top: 15px;
   color: #aaa;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   letter-spacing: 0.5px;
   cursor: default;
   margin-left: 10px;
 }
-
-form .input-field:focus ~ label, form .has-content.input-field ~ label {
+form .input-field:focus ~ label,
+form .has-content.input-field ~ label {
   top: -16px;
   font-size: 12px;
   color: #fcb243;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .form-button {
-  background: -webkit-gradient(linear, left top, right top, from(#fcb243), to(#ffcb5b));
   background: linear-gradient(to right, #fcb243, #ffcb5b);
   font-size: 14px;
   letter-spacing: 4px;
@@ -180,31 +219,23 @@ form .input-field:focus ~ label, form .has-content.input-field ~ label {
   max-width: 220px;
   line-height: 50px;
   text-align: center;
-  -webkit-box-shadow: 0 0 5px #fcb243;
-          box-shadow: 0 0 5px #fcb243;
-  -webkit-transition: all 0.2s ease;
+  box-shadow: 0 0 5px #fcb243;
   transition: all 0.2s ease;
   border-radius: 30px;
   margin: 0 auto;
 }
-
 .form-button.cancel {
   background: #777777;
-  -webkit-box-shadow: 0 0 5px #777777;
-          box-shadow: 0 0 5px #777777;
+  box-shadow: 0 0 5px #777777;
   color: rgba(255, 255, 255, 0.788);
 }
-
 .form-button.cancel:hover {
-  -webkit-box-shadow: 0 0 12px #777777;
-          box-shadow: 0 0 12px #777777;
+  box-shadow: 0 0 12px #777777;
 }
-
 .form-button:hover {
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
-  -webkit-box-shadow: 0 0 12px #fcb243;
-          box-shadow: 0 0 12px #fcb243;
+  box-shadow: 0 0 12px #fcb243;
 }
+
 /*# sourceMappingURL=styles.css.map */

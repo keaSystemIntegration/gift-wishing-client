@@ -1,0 +1,30 @@
+#friends {
+  // position: absolute;
+  // right: 0;
+  // top: 0;
+
+  .friend__item {
+    .friend__item_status {
+      $status-box-lg: 15px;
+      width: $status-box-lg;
+      height: $status-box-lg;
+      display: inline-block;
+      border-radius: 50%;
+    }
+
+    .friend__item_status-online {
+      $online: #5cb85c;
+      background-color: $online;
+    }
+
+    .friend__item_status-offline {
+      $offline: #d9534f;
+      background-color: $offline;
+    }
+
+    .friend__item_status-not-registered {
+      $not-registered: #292b2c;
+      background-color: $not-registered;
+    }
+  }
+}

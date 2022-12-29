@@ -1,0 +1,20 @@
+.wishlist {
+  color: white;
+
+}
+
+.swal2-styled.swal2-confirm {
+  $remove-btn: #d9534f;
+  background-color: $remove-btn;
+}
+
+.swal2-actions {
+
+  .swal2-confirm {
+    padding: 0;
+
+    #remove-product {
+      padding: 0.625em 1.1em;;
+    }
+  }
+}

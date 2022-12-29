@@ -69,12 +69,13 @@ app.get("/", (req, res) => {
   res.send(
     header +
       sideBar +
-      mainPage +
-      create +
-      deleteAccount +
-      edit +
-      notification +
-      liveChat +
+      wishlist +
+      // mainPage +
+      // create +
+      // deleteAccount +
+      // edit +
+      // notification +
+      // liveChat +
       footer
   );
 });
@@ -84,6 +85,11 @@ app.get("/login", (req, res) => {
 });
 
 server.listen(PORT, (error) => {
+app.get("/wishlists", (req, res) => {
+  res.send(header + sideBar + friends + wishlist + wishlistModal + footer);
+});
+
+server.listen(process.env.PORT, (error) => {
   if (error) {
     console.log(error);
   }

@@ -1,51 +1,100 @@
 #side-bar {
-    // background-color: rgb(31, 104, 104);
-    // background-color: #ffd35b;
-    background: linear-gradient(to right top, #fcb243, #ffcb5b);
-    color: #242424;
-    width: 15rem;
-    padding: 1.5rem 0;
+  // background-color: rgb(31, 104, 104);
+  // background-color: #ffd35b;
+  background: linear-gradient(to right top, #fcb243, #ffcb5b);
+  color: #242424;
+  width: 15rem;
+  padding: 1.5rem 0;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  hr {
+    border-color: #1d1d1d;
+  }
+
+  .top-section {
+    .profile-picture {
+      width: 60%;
+    }
+  }
+
+  .middle-section {
+    #navigation-bar {
+      display: flex;
+      flex-direction: column;
+
+      .option {
+        height: 5vh;
+        background: linear-gradient(to right top, #2c2b2b, #161616);
+        color: white;
+        box-shadow: 0 0 5px #2c2b2b;
+        // background-color: #161616;
+
+        &:active {
+          color: #fcb243;
+          font-weight: bold;
+        }
+
+        &.active {
+          color: #fcb243;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .bottom-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+    align-items: center;
 
-    hr {
-        border-color: #1d1d1d;
+    .logout-button {
+      width: 170px;
+      height: 50px;
+      background: linear-gradient(to right top, #2c2b2b, #161616);
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-family: "Open Sans", sans-serif;
+      color: white;
+      position: relative;
+      line-height: 50px;
+      display: block;
+      text-align: center;
+      box-shadow: 0 0 5px #2c2b2b;
+      transition: all 0.2s ease;
+      border-radius: 20px;
+      align-self: center;
+
+      &:hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 0 12px #fcb243;
+      }
     }
 
-    .top-section {
+    .promo {
+      font-family: "Poppins", sans-serif;
+      width: 85%;
+      height: 120px;
+      background: linear-gradient(to right top, #2c2b2b, #161616);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      margin: 50px auto;
+      border-radius: 1.5rem;
+      color: #cfcece;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
 
-        .profile-picture {
-            width: 60%;
-        }
+      .text {
+        width: 50%;
+      }
+
+      .security-picture {
+        height: 100%;
+      }
     }
-
-    .bottom-section {
-
-        .promo {
-            font-family: "Poppins", sans-serif;
-            width: 85%;
-            height: 120px;
-            background: linear-gradient(to right top, #2c2b2b, #161616);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            margin: 50px auto;
-            border-radius: 1.5rem;
-            color: #cfcece;
-            display: flex;
-            align-items: center;
-            padding: .5rem;
-
-            .text {
-                width: 50%;
-            }
-
-            .security-picture {
-                height: 100%;
-            }
-        }
-
-        
-    }
+  }
 }

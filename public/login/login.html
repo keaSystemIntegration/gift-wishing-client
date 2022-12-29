@@ -1,89 +1,95 @@
 <div id="login-page">
-    <div class="form-box">
-        <div class="button-box">
-            <div id="btn"></div>
-            <button class="toggle-btn login" onclick="login()">Log In</button>
-            <button class="toggle-btn register" onclick="register()">Register</button>
-        </div>
-
-        <form method="POST" id="login-form">
-            <ul>
-                <li class="input">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="" 
-                        class="input-field" 
-                        required>
-                    <label>Email</label>
-                    <span class="focus-border"></span>
-                </li>
-        
-                <li class="input">
-                    <input 
-                        type="password"
-                        name="password" 
-                        placeholder="" 
-                        class="input-field">
-                    <label>Password</label>
-                    <span class="focus-border"></span>
-                </li>
-            </ul>
-        
-            <div class="submit-box">
-                <button class="form-button" type="submit">
-                    <span class="background"></span>
-                    <span class="border"></span>
-                    <span class="text">Log In</span>
-                </button>
-            </div>
-        </form>
-
-        <form method="POST" id="register-form">
-            <ul>
-                <li class="input">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="" 
-                        required 
-                        class="input-field">
-                    <label>Email</label>
-                    <span class="focus-border"></span>
-                </li>
-    
-                <li class="input">
-                    <input 
-                        type="text" 
-                        name="username" 
-                        pattern="[^()/><\][^\\\x22,;|$!?!#%&*]+" 
-                        title="No special character allowed!" 
-                        placeholder="" 
-                        required 
-                        class="input-field">
-                    <label>Username</label>
-                    <span class="focus-border"></span>
-                </li>
-        
-                <li class="input">
-                    <input type="password" name="password" placeholder="" class="input-field">
-                    <label>Password</label>
-                    <span class="focus-border"></span>
-                </li>
-            </ul>
-            
-            <div class="submit-box">
-                <button class="form-button" type="submit">
-                    <span class="background"></span>
-                    <span class="border"></span>
-                    <span class="text">Register</span>
-                </button>
-            </div>
-        </form>
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn"></div>
+      <button class="toggle-btn login" onclick="login()">Log In</button>
+      <button class="toggle-btn register" onclick="register()">Register</button>
     </div>
+
+    <form method="POST" id="login-form">
+      <ul>
+        <li class="input">
+          <input
+            type="email"
+            name="email"
+            placeholder=""
+            class="input-field"
+            required
+          />
+          <label>Email</label>
+          <span class="focus-border"></span>
+        </li>
+
+        <li class="input">
+          <input
+            type="password"
+            name="password"
+            placeholder=""
+            class="input-field"
+          />
+          <label>Password</label>
+          <span class="focus-border"></span>
+        </li>
+      </ul>
+
+      <div class="submit-box">
+        <button class="form-button" type="submit">
+          <span class="background"></span>
+          <span class="border"></span>
+          <span class="text">Log In</span>
+        </button>
+      </div>
+    </form>
+
+    <form method="POST" id="register-form">
+      <ul>
+        <li class="input">
+          <input
+            type="email"
+            name="email"
+            placeholder=""
+            required
+            class="input-field"
+          />
+          <label>Email</label>
+          <span class="focus-border"></span>
+        </li>
+
+        <li class="input">
+          <input
+            type="text"
+            name="name"
+            pattern="[^()/><\][^\\\x22,;|$!?!#%&*]+"
+            title="No special character allowed!"
+            placeholder=""
+            required
+            class="input-field"
+          />
+          <label>Name</label>
+          <span class="focus-border"></span>
+        </li>
+
+        <li class="input">
+          <input
+            type="password"
+            name="password"
+            placeholder=""
+            class="input-field"
+          />
+          <label>Password</label>
+          <span class="focus-border"></span>
+        </li>
+      </ul>
+
+      <div class="submit-box">
+        <button class="form-button" type="submit">
+          <span class="background"></span>
+          <span class="border"></span>
+          <span class="text">Register</span>
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
-
-
-
 
 <script src="../login/login.js"></script>

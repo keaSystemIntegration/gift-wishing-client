@@ -1,0 +1,16 @@
+.wishlist {
+  color: white;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #d9534f;
+}
+
+.swal2-actions .swal2-confirm {
+  padding: 0;
+}
+.swal2-actions .swal2-confirm #remove-product {
+  padding: 0.625em 1.1em;
+}
+
+/*# sourceMappingURL=styles.css.map */

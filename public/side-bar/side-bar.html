@@ -2,23 +2,32 @@
 
 <div id="side-bar">
     <div class="top-section">
-        <h1 id="greeting">Welcome, </h1>
+        <h1>Welcome, </h1>
 
-        <img class="profile-picture" src="https://image.flaticon.com/icons/png/512/1946/1946392.png" alt="profile">
+        <span id="greeting"></span>
+
+        <!-- <img class="profile-picture" src="https://image.flaticon.com/icons/png/512/1946/1946392.png" alt="profile"> -->
         <!-- would be dynamic -->
     </div>
-    
 
-    <div class="bottom-section">
-        <div class="promo">
-            <p class="text">Better safe than sorry</p>
-
-            <img class="security-picture" src="https://image.flaticon.com/icons/png/512/2092/2092757.png" alt="security">
+    <div class="middle-section">
+        <div id="navigation-bar">
+            <button class="option active" data-id="wishlist">Wishlist</button>
+            <button class="option" data-id="friends">Friends</button>
+            <button class="option" data-id="products">Products</button> <!-- example -->
         </div>
-
-        <hr>
-        © Copyright 'Let's meet at 12'
     </div>
+    
+    <div class="bottom-section">
+        <button class="logout-button" onclick="logout()">Logout</button>
+
+        <div class="copyright"> 
+            <hr>
+            © Copyright 'Charmander'
+        </div>
+    </div>
+
+    
 </div>
 
 <div class="content"> 
