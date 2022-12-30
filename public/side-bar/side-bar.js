@@ -31,7 +31,10 @@ function logout() {
 $("button.option").click(function () {
   var link = $(this).attr("data-id");
 
-  $(".content").load(`/${link}`);
+  if (!$(this).hasClass("active")) {
+    $(".content").empty();
+    $(".content").load(`/${link}`);
+  }
 
   $("#navigation-bar")
     .find("button.option")

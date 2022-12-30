@@ -3,8 +3,6 @@ const express = require("express");
 const http = require("http");
 const app = express();
 
-const PORT = process.env.PORT || 8000
-
 let server = http.createServer(app);
 const fs = require("fs");
 
@@ -53,16 +51,22 @@ const liveChat = fs.readFileSync(
   "utf-8"
 );
 
-const products = fs.readFileSync(
-    path.join(__dirname, "../public/products/products.html"), "utf-8"
+const wishlist = fs.readFileSync(
+  path.join(__dirname, "../public/wishlist/index.html")
 );
-app.get("/products", (req, res) => {
-  res.send(header + sideBar +
-      notification +
-      products +
-      liveChat +
-      footer)
-});
+
+const products = fs.readFileSync(
+  path.join(__dirname, "../public/products/products.html"),
+  "utf-8"
+);
+
+const wishlistModal = fs.readFileSync(
+  path.join(__dirname, "../public/wishlist-modal/index.html")
+);
+
+const friends = fs.readFileSync(
+  path.join(__dirname, "../public/friends/index.html")
+);
 
 // UI Calls
 app.get("/", (req, res) => {
@@ -84,10 +88,15 @@ app.get("/login", (req, res) => {
   res.send(header + login + footer);
 });
 
-server.listen(PORT, (error) => {
 app.get("/wishlists", (req, res) => {
   res.send(header + sideBar + friends + wishlist + wishlistModal + footer);
 });
+
+app.get("/products", (req, res) => {
+  res.send(notification + products);
+});
+
+const PORT = process.env.PORT || 8000;
 
 server.listen(process.env.PORT, (error) => {
   if (error) {
