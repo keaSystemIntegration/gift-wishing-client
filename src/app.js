@@ -52,7 +52,8 @@ const liveChat = fs.readFileSync(
 );
 
 const wishlist = fs.readFileSync(
-  path.join(__dirname, "../public/wishlist/index.html")
+  path.join(__dirname, "../public/wishlist/index.html"),
+  "utf-8"
 );
 
 const products = fs.readFileSync(
@@ -61,11 +62,13 @@ const products = fs.readFileSync(
 );
 
 const wishlistModal = fs.readFileSync(
-  path.join(__dirname, "../public/wishlist-modal/index.html")
+  path.join(__dirname, "../public/wishlist-modal/index.html"),
+  "utf-8"
 );
 
 const friends = fs.readFileSync(
-  path.join(__dirname, "../public/friends/index.html")
+  path.join(__dirname, "../public/friends/index.html"),
+  "utf-8"
 );
 
 // UI Calls
@@ -74,6 +77,8 @@ app.get("/", (req, res) => {
     header +
       sideBar +
       wishlist +
+      friends +
+      wishlistModal +
       // mainPage +
       // create +
       // deleteAccount +
@@ -89,7 +94,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/wishlists", (req, res) => {
-  res.send(header + sideBar + friends + wishlist + wishlistModal + footer);
+  res.send(wishlist + friends + wishlistModal);
 });
 
 app.get("/products", (req, res) => {
