@@ -21,7 +21,7 @@ const url = "https://api.gifts.hotdeals.dev";
   const result = await response;
   // console.log(result.data);
   window.localStorage.setItem("wishes", JSON.stringify(result.data));
-  // console.log(window.localStorage);
+  console.log('wishes', window.localStorage.wishes);
 })();
 
 socket.emit("status");

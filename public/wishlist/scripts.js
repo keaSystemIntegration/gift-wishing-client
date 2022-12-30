@@ -1,10 +1,23 @@
 // fetch user wishlist and display it on page
 const accessToken = window.localStorage.token;
 (async function() {
-  const wishes = JSON.parse(window.localStorage.wishes);
+  
+
+
+  const response = axios.get("/wishes", {
+    headers: {
+      authorization:
+        `Bearer ${accessToken}`,
+    },
+  });
+  const result = await response;
+
+  // const wishes = JSON.parse(window.localStorage.wishes);
+  const wishes = result.data;
   // console.log(wishes);
   const userEmail = JSON.parse(window.localStorage.user)?.email;
   const wishlistProducts = wishes?.filter(wish => wish.user_email === userEmail) || [];
+  // console.log('wishlistProducts', wishlistProducts);
   if (wishlistProducts.length > 0) {
     $("#wishlist__products").append(function () {
       return wishlistProducts.map(
@@ -57,7 +70,7 @@ $(document).on("click", ".wishlist__product_remove-btn", function () {
 $(document).on("click", "#remove-product", async function () {
   const productName = $(this).data("product-name");
   const productId = $(this).data("product-id");
-  // console.log(productName, productId);
+  console.log(productName, productId);
 
   const response = axios.delete("/wishes", {
     headers: {
