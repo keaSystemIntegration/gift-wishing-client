@@ -84,7 +84,7 @@ app.get("/login", (req, res) => {
   res.send(header + login + footer);
 });
 
-server.listen(PORT, (error) => {
+
 app.get("/wishlists", (req, res) => {
   res.send(friends + wishlist + wishlistModal);
 });
