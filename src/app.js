@@ -56,6 +56,19 @@ const liveChat = fs.readFileSync(
 const products = fs.readFileSync(
     path.join(__dirname, "../public/products/products.html"), "utf-8"
 );
+
+const wishlist = fs.readFileSync(
+  path.join(__dirname, "../public/wishlist/index.html"), "utf-8"
+);
+
+const friends = fs.readFileSync(
+  path.join(__dirname, "../public/friends/index.html"), "utf-8"
+);
+
+const wishlistModal = fs.readFileSync(
+  path.join(__dirname, "../public/wishlist-modal/index.html"), "utf-8"
+);
+
 app.get("/products", (req, res) => {
   res.send(header + sideBar +
       notification +
