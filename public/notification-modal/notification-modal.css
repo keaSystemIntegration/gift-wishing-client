@@ -8,20 +8,10 @@
   left: 50vw;
   overflow: auto;
   padding: 10px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   background: #313131;
   border-radius: 20px;
   border: 3px solid green;
-}
-
-@-webkit-keyframes slide-down-notification {
-  from {
-    top: 0vh;
-  }
-  to {
-    top: 4vh;
-  }
 }
 
 @keyframes slide-down-notification {
@@ -32,16 +22,10 @@
     top: 4vh;
   }
 }
-
-@-webkit-keyframes slide-up-notification {
-  to {
-    top: 0vh;
-  }
-}
-
 @keyframes slide-up-notification {
   to {
     top: 0vh;
   }
 }
+
 /*# sourceMappingURL=notification-modal.css.map */
