@@ -8,7 +8,7 @@
       }
 
       if (token) {
-        console.log("INTERCEPTOR TOKEN", token);
+        // console.log("INTERCEPTOR TOKEN", token);
         config.headers["Authorization"] = `Bearer ${token}`;
       } else {
         console.log("You need to log in");

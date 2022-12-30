@@ -10,7 +10,7 @@ $(document).on("click", ".friend__item", function () {
   $('.modal-header__title').append(`
     <span class="modal-header__title_name">${friendEmail} Wish List</span>
   `);
-  console.log(wishlistProducts);
+  // console.log(wishlistProducts);
   wishlistProducts.length > 0 ? 
     $('.friend-wishlist').append(function() {
       return wishlistProducts.map((product, index) => `

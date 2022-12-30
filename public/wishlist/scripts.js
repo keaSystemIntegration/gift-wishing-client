@@ -70,7 +70,7 @@ $(document).on("click", ".wishlist__product_remove-btn", function () {
 $(document).on("click", "#remove-product", async function () {
   const productName = $(this).data("product-name");
   const productId = $(this).data("product-id");
-  console.log(productName, productId);
+  // console.log(productName, productId);
 
   const response = axios.delete("/wishes", {
     headers: {
