@@ -3,8 +3,6 @@ const express = require("express");
 const http = require("http");
 const app = express();
 
-const PORT = process.env.PORT || 8000
-
 let server = http.createServer(app);
 const fs = require("fs");
 
@@ -53,29 +51,25 @@ const liveChat = fs.readFileSync(
   "utf-8"
 );
 
-const products = fs.readFileSync(
-    path.join(__dirname, "../public/products/products.html"), "utf-8"
-);
-
 const wishlist = fs.readFileSync(
-  path.join(__dirname, "../public/wishlist/index.html"), "utf-8"
+  path.join(__dirname, "../public/wishlist/index.html"),
+  "utf-8"
 );
 
-const friends = fs.readFileSync(
-  path.join(__dirname, "../public/friends/index.html"), "utf-8"
+const products = fs.readFileSync(
+  path.join(__dirname, "../public/products/products.html"),
+  "utf-8"
 );
 
 const wishlistModal = fs.readFileSync(
-  path.join(__dirname, "../public/wishlist-modal/index.html"), "utf-8"
+  path.join(__dirname, "../public/wishlist-modal/index.html"),
+  "utf-8"
 );
 
-app.get("/products", (req, res) => {
-  res.send(header + sideBar +
-      notification +
-      products +
-      liveChat +
-      footer)
-});
+const friends = fs.readFileSync(
+  path.join(__dirname, "../public/friends/index.html"),
+  "utf-8"
+);
 
 // UI Calls
 app.get("/", (req, res) => {
@@ -83,6 +77,8 @@ app.get("/", (req, res) => {
     header +
       sideBar +
       wishlist +
+      friends +
+      wishlistModal +
       // mainPage +
       // create +
       // deleteAccount +
@@ -97,10 +93,15 @@ app.get("/login", (req, res) => {
   res.send(header + login + footer);
 });
 
-
 app.get("/wishlists", (req, res) => {
-  res.send(friends + wishlist + wishlistModal);
+  res.send(wishlist + friends + wishlistModal);
 });
+
+app.get("/products", (req, res) => {
+  res.send(notification + products);
+});
+
+const PORT = process.env.PORT || 8000;
 
 server.listen(process.env.PORT, (error) => {
   if (error) {
