@@ -1,32 +1,42 @@
 #friends {
-  // position: absolute;
-  // right: 0;
-  // top: 0;
+  margin: 10px 0px;
 
-  .friend__item {
-    display: inline-block;
+  .friends__title {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-    .friend__item_status {
-      $status-box-lg: 15px;
-      width: $status-box-lg;
-      height: $status-box-lg;
-      display: inline-block;
-      border-radius: 50%;
-    }
+  #friends__list {
+    padding: 0 10px;
 
-    .friend__item_status-online {
-      $online: #5cb85c;
-      background-color: $online;
-    }
-
-    .friend__item_status-offline {
-      $offline: #d9534f;
-      background-color: $offline;
-    }
-
-    .friend__item_status-not-registered {
-      $not-registered: #979b9d;
-      background-color: $not-registered;
+    .friend__item {
+      display: flex;
+      margin-bottom: 5px;
+  
+      .friend__item_status {
+        $status-box-lg: 15px;
+        width: $status-box-lg;
+        height: $status-box-lg;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+  
+      .friend__item_status-online {
+        $online: #5cb85c;
+        background-color: $online;
+      }
+  
+      .friend__item_status-offline {
+        $offline: #d9534f;
+        background-color: $offline;
+      }
+  
+      .friend__item_status-not-registered {
+        $not-registered: #3f4344;
+        background-color: $not-registered;
+      }
     }
   }
 }

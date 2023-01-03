@@ -18,23 +18,36 @@
   padding: 0.625em 1.1em;
 }
 
-#friends .friend__item {
-  display: inline-block;
+#friends {
+  margin: 10px 0px;
 }
-#friends .friend__item .friend__item_status {
+#friends .friends__title {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+#friends #friends__list {
+  padding: 0 10px;
+}
+#friends #friends__list .friend__item {
+  display: flex;
+  margin-bottom: 5px;
+}
+#friends #friends__list .friend__item .friend__item_status {
   width: 15px;
   height: 15px;
   display: inline-block;
   border-radius: 50%;
+  margin-right: 5px;
 }
-#friends .friend__item .friend__item_status-online {
+#friends #friends__list .friend__item .friend__item_status-online {
   background-color: #5cb85c;
 }
-#friends .friend__item .friend__item_status-offline {
+#friends #friends__list .friend__item .friend__item_status-offline {
   background-color: #d9534f;
 }
-#friends .friend__item .friend__item_status-not-registered {
-  background-color: #979b9d;
+#friends #friends__list .friend__item .friend__item_status-not-registered {
+  background-color: #3f4344;
 }
 
 #wishlist-modal {
@@ -53,7 +66,7 @@
 #wishlist-modal .modal-container {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   justify-content: space-between;
   background: linear-gradient(to right top, #fcb243, #ffcb5b);

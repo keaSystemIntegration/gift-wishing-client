@@ -45,7 +45,6 @@
           return `
         <div class="friend__item" id="${friend.email}">
           <span class="friend__item_status friend__item_status-${status}" title="${status}"></span>
-          <span class="friend__item_index">${++index}.</span>
           <span class="friend__item_email">${friend.email}</span>
         </div>
         `;
