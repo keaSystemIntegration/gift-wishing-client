@@ -1,5 +1,3 @@
-// const accessToken = window.localStorage.token;
-
 var allProducts = [];
 var productDiv;
 
@@ -18,27 +16,29 @@ function createViewProducts(product) {
     searchProduct(searchInput);
   });
 
-  fetch("https://api.gifts.hotdeals.dev/graphql", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: JSON.stringify({
-      query: `
-             {
-                Products {
-                    product_id
-                    product_name
-                    sub_category
-                    main_category
-                    link
-                }
-            }
-            `,
-    }),
-  })
-    .then((response) => response.json())
+  axios
+    .post(
+      "/graphql",
+      JSON.stringify({
+        query: `
+           {
+              Products {
+                  product_id
+                  product_name
+                  sub_category
+                  main_category
+                  link
+              }
+          }
+          `,
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => response.data)
     .then((result) => {
       allProducts = result.data["Products"];
       allProducts.forEach((product) => {
@@ -87,17 +87,19 @@ function createDivTag(tag, className, content, id) {
 }
 
 function addToWishList(itemId) {
-  fetch("https://api.gifts.hotdeals.dev/wishes", {
-    method: "POST",
-
-    headers: {
-      "Content-Type": "application/json",
-      //   Authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify({
-      productName: itemId,
-    }),
-  }).then((response) => console.log(response));
+  axios
+    .post(
+      "/wishes",
+      JSON.stringify({
+        productName: itemId,
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => console.log(response));
 }
 
 function searchProduct(searchInput) {

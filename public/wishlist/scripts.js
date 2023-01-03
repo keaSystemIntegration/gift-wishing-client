@@ -8,36 +8,39 @@
 
 function createViewWishlist(wishes) {
   const userEmail = JSON.parse(window.localStorage.user)?.email;
-  const wishlistProducts = wishes?.filter(wish => wish.user_email === userEmail) || [];
-  // console.log('wishlistProducts', wishlistProducts);
+  const wishlistProducts =
+    wishes?.filter((wish) => wish.user_email === userEmail) || [];
+  // console.log("wishlistProducts", wishlistProducts);
   if (wishlistProducts.length > 0) {
-    wishlistProducts.forEach( (wishlistProduct) => {
+    wishlistProducts.forEach((wishlistProduct) => {
       // console.log(wishlistProduct);
-      fetch("https://api.gifts.hotdeals.dev/graphql",
-      {
-          method: "POST",
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-              query: `
-              {
-                  Product (product_id: "${wishlistProduct.product_name}") {
-                      product_name
-                  }
-              }
-              `
-          })
-      })
-      .then(response => response.json())
-      .then(result => {
-        // console.log(result?.data?.Product?.product_name)
-        ;
-        const productName = result?.data?.Product?.product_name;
-        // console.log(wishlistProduct);
-        // console.log(productName);
+      axios
+        .post(
+          "/graphql",
+          JSON.stringify({
+            query: `
+        {
+            Product (product_id: "${wishlistProduct.product_name}") {
+                product_name
+            }
+        }
+        `,
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => response.data)
+        .then((result) => {
+          // console.log(result?.data?.Product?.product_name)
+          console.log("RES", result);
+          const productName = result?.data?.Product?.product_name;
+          // console.log(wishlistProduct);
+          // console.log(productName);
 
-        $("#wishlist__products").append(`
+          $("#wishlist__products").append(`
           <div class="wishlist__product" id="${wishlistProduct.wish_id}">
             <span class="wishlist__product_name">
               ${productName}
@@ -50,9 +53,8 @@ function createViewWishlist(wishes) {
             >
               <button>remove</button>
             </span>
-          </div`
-        ); 
-      })
+          </div`);
+        });
     });
   } else {
     $("#wishlist__products").append(`
