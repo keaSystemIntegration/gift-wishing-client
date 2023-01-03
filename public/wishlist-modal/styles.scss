@@ -14,7 +14,7 @@
   .modal-container {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     justify-content: space-between;
     background: linear-gradient(to right top, #fcb243, #ffcb5b);
@@ -27,6 +27,13 @@
 
       .close-modal {
         cursor: pointer;
+      }
+    }
+
+    .friend-wishlist {
+      
+      .friend-wishlist__product {
+        margin-bottom: 10px;
       }
     }
   }

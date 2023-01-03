@@ -8,21 +8,45 @@ $(document).on("click", ".friend__item", function () {
   $('#wishlist-modal').css('display', 'block');
 
   $('.modal-header__title').append(`
-    <span class="modal-header__title_name">${friendEmail} Wish List</span>
+    <h2 class="modal-header__title_name">${friendEmail} Wish List</h2>
   `);
-  console.log(wishlistProducts);
-  wishlistProducts.length > 0 ? 
-    $('.friend-wishlist').append(function() {
-      return wishlistProducts.map((product, index) => `
-        <div class="friend-wishlist__product" id="friend-product-${product.wish_id}">
-          <span class="wishlist__product_name">
-            ${++index}. ${product.product_name}
-          </span>
-        </div>
-      `);
-    }) : 
-    $('.friend-wishlist').append(`<div class="friend-wishlist__product">No product</div>`)
-});
+  // console.log(wishlistProducts);
+  wishlistProducts.length > 0 ?
+    wishlistProducts.forEach( (wishlistProduct) => {
+      // console.log(wishlistProduct);
+      fetch("https://api.gifts.hotdeals.dev/graphql",
+      {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          query: `
+          {
+            Product (product_id: "${wishlistProduct.product_name}") {
+              product_name
+            }
+          }
+          `
+        })
+      })
+      .then(response => response.json())
+      .then(result => {
+        const productName = result?.data?.Product?.product_name;
+
+        $(".friend-wishlist").append(`
+          <div class="friend-wishlist__product" id="friend-product-${wishlistProduct.wish_id}">
+            <span class="wishlist__product_name">
+              ${productName}
+            </span>
+          </div>
+        `); 
+      });
+    }) :
+    $(".friend-wishlist").append(`
+      <div class="friend-wishlist__product">No product</div>
+    `);
+})
 
 $(document).on("click", ".close-modal", function () {
   $('#wishlist-modal').css('display', 'none');

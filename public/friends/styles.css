@@ -1,17 +1,33 @@
-#friends .friend__item .friend__item_status {
+#friends {
+  margin: 10px 0px;
+}
+#friends .friends__title {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+#friends #friends__list {
+  padding: 0 10px;
+}
+#friends #friends__list .friend__item {
+  display: flex;
+  margin-bottom: 5px;
+}
+#friends #friends__list .friend__item .friend__item_status {
   width: 15px;
   height: 15px;
   display: inline-block;
   border-radius: 50%;
+  margin-right: 5px;
 }
-#friends .friend__item .friend__item_status-online {
+#friends #friends__list .friend__item .friend__item_status-online {
   background-color: #5cb85c;
 }
-#friends .friend__item .friend__item_status-offline {
+#friends #friends__list .friend__item .friend__item_status-offline {
   background-color: #d9534f;
 }
-#friends .friend__item .friend__item_status-not-registered {
-  background-color: #292b2c;
+#friends #friends__list .friend__item .friend__item_status-not-registered {
+  background-color: #3f4344;
 }
 
 /*# sourceMappingURL=styles.css.map */
