@@ -28,5 +28,8 @@
 #wishlist-modal .modal-container .modal-header .close-modal {
   cursor: pointer;
 }
+#wishlist-modal .modal-container .friend-wishlist .friend-wishlist__product {
+  margin-bottom: 10px;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,11 @@
 .wishlist {
   color: white;
 }
+.wishlist .wishlist__product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
 .swal2-styled.swal2-confirm {
   background-color: #d9534f;
@@ -61,6 +66,9 @@
 }
 #wishlist-modal .modal-container .modal-header .close-modal {
   cursor: pointer;
+}
+#wishlist-modal .modal-container .friend-wishlist .friend-wishlist__product {
+  margin-bottom: 10px;
 }
 
 body {

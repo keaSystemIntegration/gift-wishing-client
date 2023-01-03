@@ -8,7 +8,7 @@ $(document).on("click", ".friend__item", function () {
   $('#wishlist-modal').css('display', 'block');
 
   $('.modal-header__title').append(`
-    <span class="modal-header__title_name">${friendEmail} Wish List</span>
+    <h2 class="modal-header__title_name">${friendEmail} Wish List</h2>
   `);
   // console.log(wishlistProducts);
   wishlistProducts.length > 0 ?
