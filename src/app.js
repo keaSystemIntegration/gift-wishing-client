@@ -103,7 +103,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/account", (req, res) => {
-  res.send(account);
+  res.send(account + wishlistModal);
 });
 
 app.get("/wishlists", (req, res) => {
@@ -111,11 +111,11 @@ app.get("/wishlists", (req, res) => {
 });
 
 app.get("/invite", (req, res) => {
-  res.send(invitePage);
+  res.send(invitePage + wishlistModal);
 });
 
 app.get("/products", (req, res) => {
-  res.send(notification + products);
+  res.send(notification + products + wishlistModal);
 });
 
 const PORT = process.env.PORT || 8000;

@@ -11,16 +11,6 @@
         token: accessToken,
       },
     });
-
-    const response = axios.get("/wishes", {
-      headers: {
-        authorization: `Bearer ${accessToken}`,
-      },
-    });
-    const result = await response;
-    // console.log(result.data);
-    window.localStorage.setItem("wishes", JSON.stringify(result.data));
-    // console.log(window.localStorage);
   })();
 
   socket.emit("status");

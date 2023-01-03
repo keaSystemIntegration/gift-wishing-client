@@ -1,7 +1,11 @@
 // fetch user wishlist and display it on page
-(function loadWishes() {
-  const wishes = JSON.parse(window.localStorage.wishes);
-  // console.log(wishes);
+(async function loadWishes() {
+  const response = axios.get("/wishes");
+  const result = await response;
+
+
+  const wishes = result.data;
+  console.log(wishes);
 
   createViewWishlist(wishes);
 })();

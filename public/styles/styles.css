@@ -32,6 +32,7 @@
 #friends #friends__list .friend__item {
   display: flex;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 #friends #friends__list .friend__item .friend__item_status {
   width: 15px;
@@ -79,6 +80,8 @@
 }
 #wishlist-modal .modal-container .modal-header .close-modal {
   cursor: pointer;
+  padding: 10px;
+  font-size: 30px;
 }
 #wishlist-modal .modal-container .friend-wishlist .friend-wishlist__product {
   margin-bottom: 10px;
@@ -105,7 +108,7 @@ a {
 .app-box {
   display: flex;
   width: 95vw;
-  height: 90vh;
+  height: 102vh;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   margin: auto;
   border-radius: 2rem;
