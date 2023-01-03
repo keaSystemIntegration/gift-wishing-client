@@ -4,6 +4,8 @@
   // top: 0;
 
   .friend__item {
+    display: inline-block;
+
     .friend__item_status {
       $status-box-lg: 15px;
       width: $status-box-lg;
@@ -23,7 +25,7 @@
     }
 
     .friend__item_status-not-registered {
-      $not-registered: #292b2c;
+      $not-registered: #979b9d;
       background-color: $not-registered;
     }
   }

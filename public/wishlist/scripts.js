@@ -44,8 +44,8 @@ function createViewWishlist(wishes) {
         // console.log(result?.data?.Product?.product_name)
         ;
         const productName = result?.data?.Product?.product_name;
-        console.log(wishlistProduct);
-        console.log(productName);
+        // console.log(wishlistProduct);
+        // console.log(productName);
 
         $("#wishlist__products").append(`
           <div class="wishlist__product" id="${wishlistProduct.wish_id}">
