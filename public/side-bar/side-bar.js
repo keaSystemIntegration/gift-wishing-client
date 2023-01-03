@@ -2,8 +2,18 @@
   const token = window.localStorage.getItem("token");
   const user = window.localStorage.getItem("user");
 
+  if (!token) {
+    console.log("You need to log in");
+    window.location.assign("/login");
+  }
+
+  if (user) {
+    $("#friends").load(`/friends`);
+  }
+
   axios.interceptors.request.use(
     (config) => {
+      console.log("STUFF");
       if (user) {
         $("#greeting").text(JSON.parse(user).email || "Guest");
       }
@@ -21,10 +31,6 @@
       return Promise.reject(error);
     }
   );
-
-  if (user) {
-    $("#friends").load(`/friends`);
-  }
 })();
 
 function logout() {
