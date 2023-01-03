@@ -50,7 +50,7 @@ function createRow(product) {
     const productName = createDivTag("div", "product-detail", product.product_name)
     const productMainCategory = createDivTag("div", "product-detail", product.main_category)
     const productSubCategory = createDivTag("div", "product-detail", product.sub_category)
-    const addToWishListButton = createDivTag("button", "add-product-button", "Wish List", product.product_id)
+    const addToWishListButton = createDivTag("button", "add-product-button", "Add", product.product_id)
     productItem.appendChild(productName)
     productItem.appendChild(productMainCategory)
     productItem.appendChild(productSubCategory)

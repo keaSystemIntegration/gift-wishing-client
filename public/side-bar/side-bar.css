@@ -14,6 +14,11 @@
 #side-bar .top-section .profile-picture {
   width: 60%;
 }
+#side-bar .middle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
 #side-bar .middle-section #navigation-bar {
   display: flex;
   flex-direction: column;

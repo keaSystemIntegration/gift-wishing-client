@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
-    "server-dev": "cross-env PORT=5000 nodemon src/app.js",
+    "server-dev": "cross-env PORT=8000 nodemon src/app.js",
     "sass-dev": "sass --watch ./public --update --style=expanded public/styles:public/styles",
     "dev": "concurrently \"npm run server-dev\" \"npm run sass-dev\""
   },
