@@ -66,6 +66,11 @@ const wishlistModal = fs.readFileSync(
   "utf-8"
 );
 
+const account = fs.readFileSync(
+	path.join(__dirname, "../public/account/account.html"),
+	"utf-8"
+);
+
 const friends = fs.readFileSync(
   path.join(__dirname, "../public/friends/index.html"),
   "utf-8"
@@ -91,6 +96,10 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
   res.send(header + login + footer);
+});
+
+app.get("/account", (req, res) => {
+	res.send(account);
 });
 
 app.get("/wishlists", (req, res) => {

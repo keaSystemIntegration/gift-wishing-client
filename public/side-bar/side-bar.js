@@ -46,3 +46,40 @@ $("button.option").click(function () {
       }
     });
 });
+
+(async function () {
+	const user = window.localStorage.getItem("user");
+	if (user) {
+		const userId = JSON.parse(user).user_id;
+		const route = "/pictures";
+		const append = "/"+userId;
+		const queryUrl = route+append;
+		console.log("queryUrl: ", queryUrl);
+		try {
+			const response = await axios.get(queryUrl);
+			const src = response.data.url;
+			console.log("We got a response : ", src);
+			document.getElementById("profile-picture-id").src = src;
+		} catch (err) {
+			console.error("Error in sidebar: ", err);
+		}
+	}
+})();
+
+const setProfilePicture = (userId) => {
+	const rootUrl = "https://api.gifts.hotdeals.dev";
+	const route = "/pictures";
+	const append = "/"+userId;
+	const queryUrl = route+append;
+	console.log("queryUrl: ", queryUrl);
+	axios.get(queryUrl)
+		.then((response) => {
+			const src = response.data.url;
+			console.log("We got a response : ", src);
+			document.getElementById("profile-picture-id").src = src;
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+}
+

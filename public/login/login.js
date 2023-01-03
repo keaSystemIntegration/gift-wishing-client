@@ -104,3 +104,20 @@ $(document).ready(function () {
       });
   });
 });
+
+
+fetch('https://api.gifts.hotdeals.dev/rss')
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => {
+		const items = data.querySelectorAll("item");
+		const rssFeed = document.getElementById('rss-feed');
+  
+    items.forEach(el => {
+			const element = document.createElement('p');
+			const cdataRegex = /<!\[CDATA\[(.*?)\]\]>/;
+			const cdata = cdataRegex.exec(el.querySelector("title").innerHTML)[1];
+			element.innerHTML = `A user just added ${cdata} to their wish list!`;
+			rssFeed.appendChild(element);
+    });
+	})
