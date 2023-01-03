@@ -1,10 +1,10 @@
 // fetch user wishlist and display it on page
-const accessToken = window.localStorage.token;
-(async function() {
+(function loadWishes() {
   const wishes = JSON.parse(window.localStorage.wishes);
   // console.log(wishes);
   const userEmail = JSON.parse(window.localStorage.user)?.email;
-  const wishlistProducts = wishes?.filter(wish => wish.user_email === userEmail) || [];
+  const wishlistProducts =
+    wishes?.filter((wish) => wish.user_email === userEmail) || [];
   if (wishlistProducts.length > 0) {
     $("#wishlist__products").append(function () {
       return wishlistProducts.map(
@@ -21,7 +21,8 @@ const accessToken = window.localStorage.token;
           <button>remove</button>
         </span>
       </div>
-      `);
+      `
+      );
     });
   } else {
     $("#wishlist__products").append(`
@@ -30,7 +31,7 @@ const accessToken = window.localStorage.token;
   }
 })();
 
-// display remove popup
+// // display remove popup
 $(document).on("click", ".wishlist__product_remove-btn", function () {
   const productName = $(this).data("product-name");
   const productId = $(this).data("product-id");
@@ -42,9 +43,9 @@ $(document).on("click", ".wishlist__product_remove-btn", function () {
     showCancelButton: true,
     focusConfirm: false,
     confirmButtonText: `
-      <div 
-        id="remove-product" 
-        data-product-name="${productName}" 
+      <div
+        id="remove-product"
+        data-product-name="${productName}"
         data-product-id="${productId}"
       >
         Yes
@@ -60,10 +61,6 @@ $(document).on("click", "#remove-product", async function () {
   // console.log(productName, productId);
 
   const response = axios.delete("/wishes", {
-    headers: {
-      authorization:
-        `Bearer ${accessToken}`,
-    },
     data: {
       productName: productName,
     },
