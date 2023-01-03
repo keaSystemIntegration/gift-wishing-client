@@ -1,0 +1,23 @@
+<div id="friends">
+  <br>
+  <br>
+  <div>
+    <h4>Invite Friend:</h4>
+    <form action="/friend/invite" id="friend-invite-form" method="post">
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="email"><br>
+      <input type="submit" value="Invite">
+    </form>
+  </div>
+  <br>
+  <div>
+    <h4>Accept Friend:</h4>
+    <form action="/auth/accept-invite" id="friend-accept-form" method="post">
+      <label for="email">Token from email:</label><br>
+      <input type="token" id="token" name="token" placeholder="token from email"><br>
+      <input type="submit" value="Accept Invite">
+    </form>
+  </div>
+</div>
+
+<script type="module" src="../invite-page/scripts.js"></script>
