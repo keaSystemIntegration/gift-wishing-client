@@ -113,11 +113,14 @@ fetch('https://api.gifts.hotdeals.dev/rss')
 		const items = data.querySelectorAll("item");
 		const rssFeed = document.getElementById('rss-feed');
   
+		const feed = [];
     items.forEach(el => {
 			const element = document.createElement('p');
 			const cdataRegex = /<!\[CDATA\[(.*?)\]\]>/;
 			const cdata = cdataRegex.exec(el.querySelector("title").innerHTML)[1];
 			element.innerHTML = `A user just added ${cdata} to their wish list!`;
-			rssFeed.appendChild(element);
+			feed.push(element);
     });
+		const feed2 = feed.slice(-9);
+		feed2.forEach(e => rssFeed.appendChild(e));
 	})
