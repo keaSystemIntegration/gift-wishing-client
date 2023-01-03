@@ -1,0 +1,17 @@
+#friends .friend__item .friend__item_status {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 50%;
+}
+#friends .friend__item .friend__item_status-online {
+  background-color: #5cb85c;
+}
+#friends .friend__item .friend__item_status-offline {
+  background-color: #d9534f;
+}
+#friends .friend__item .friend__item_status-not-registered {
+  background-color: #292b2c;
+}
+
+/*# sourceMappingURL=styles.css.map */

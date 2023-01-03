@@ -76,6 +76,11 @@ const friends = fs.readFileSync(
   "utf-8"
 );
 
+const invitePage = fs.readFileSync(
+  path.join(__dirname, "../public/invite-page/index.html"),
+  "utf-8"
+);
+
 // UI Calls
 app.get("/", (req, res) => {
   res.send(
@@ -103,6 +108,10 @@ app.get("/account", (req, res) => {
 
 app.get("/wishlists", (req, res) => {
   res.send(wishlist + wishlistModal);
+});
+
+app.get("/invite", (req, res) => {
+	res.send(invitePage);
 });
 
 app.get("/products", (req, res) => {
