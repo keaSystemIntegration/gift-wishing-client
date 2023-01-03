@@ -4,7 +4,9 @@ var productDiv;
 function createViewProducts(product) {
   productDiv.appendChild(createRow(product));
   document.getElementById(product.product_id).addEventListener("click", () => {
+		console.log("product: ", product);
     addToWishList(product.product_id);
+		addToRSSFeed(product.product_name);
   });
 }
 
@@ -100,6 +102,20 @@ function addToWishList(itemId) {
       }
     )
     .then((response) => console.log(response));
+}
+
+function addToRSSFeed(productName){
+	axios
+	  .put(
+      "/rss",
+      JSON.stringify({
+				title: productName
+			}),
+			{
+				headers: {'Content-Type': 'application/json'}
+			}
+		)
+		.then((response) => console.log(response));
 }
 
 function searchProduct(searchInput) {
