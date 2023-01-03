@@ -111,7 +111,7 @@ app.get("/wishlists", (req, res) => {
 });
 
 app.get("/invite", (req, res) => {
-	res.send(invitePage);
+  res.send(invitePage);
 });
 
 app.get("/products", (req, res) => {
