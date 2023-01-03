@@ -27,6 +27,8 @@
 }
 #wishlist-modal .modal-container .modal-header .close-modal {
   cursor: pointer;
+  padding: 10px;
+  font-size: 30px;
 }
 #wishlist-modal .modal-container .friend-wishlist .friend-wishlist__product {
   margin-bottom: 10px;

@@ -12,6 +12,7 @@
 #friends #friends__list .friend__item {
   display: flex;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 #friends #friends__list .friend__item .friend__item_status {
   width: 15px;

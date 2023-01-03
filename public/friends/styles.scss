@@ -13,6 +13,7 @@
     .friend__item {
       display: flex;
       margin-bottom: 5px;
+      cursor: pointer;
   
       .friend__item_status {
         $status-box-lg: 15px;

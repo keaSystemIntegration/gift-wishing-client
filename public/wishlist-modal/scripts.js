@@ -1,8 +1,13 @@
-$(document).on("click", ".friend__item", function () {
+$(document).on("click", ".friend__item", async function () {
   // filter wishes based on the friend email
   const friend = $(this);
   const friendEmail = friend.attr('id');
-  const wishes = JSON.parse(window.localStorage.wishes);
+
+  const response = axios.get("/wishes");
+  const result = await response;
+
+
+  const wishes = result.data;
   const wishlistProducts = wishes.filter(wish => wish.user_email === friendEmail);
 
   $('#wishlist-modal').css('display', 'block');
